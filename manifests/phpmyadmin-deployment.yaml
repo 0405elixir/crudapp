@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.28.0 (c4137012e)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: phpmyadmin
+  name: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: phpmyadmin
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yaml
+        kompose.version: 1.28.0 (c4137012e)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/manifests-default: "true"
+        io.kompose.service: phpmyadmin
+    spec:
+      containers:
+        - env:
+            - name: PMA_HOST
+              value: db
+            - name: PMA_PASSWORD
+              value: "1"
+            - name: PMA_USER
+              value: root
+          image: phpmyadmin/phpmyadmin:5.0.1
+          name: phpmyadmin
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}
