@@ -47,7 +47,7 @@ html { height: 100%; }/* чтобы фон занял весь экран */
 </head>
 
 <body> 
-     <h1 align="center">Туристическое агентство</h1>
+     <h1 align="center">Туристическое агентство Artem</h1>
 
 
  <form action="add_client.php" >
