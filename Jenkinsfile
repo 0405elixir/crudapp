@@ -56,10 +56,12 @@ environment {
       steps {
         script {
           echo "Start of Stage Test2"
-          sh "cat docker-compose.yaml"
+          File f = new File(docker-compose.yaml);
+if(f.exists() && !f.isDirectory())
+          {sh "cat docker-compose.yaml"
           //if (test -f $docker-compose.yaml)  {
          // echo "файл существует"
-          //}
+          }
            //else {
            //echo "Файл не существует"
            //error('Name verification failed')
