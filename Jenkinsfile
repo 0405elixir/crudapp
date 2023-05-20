@@ -68,7 +68,7 @@ environment {
       steps {
         script {
           server_ip="8.8.8.8"
-SYS_PING=`ping -c 5 ${server_ip} | grep 'received' | awk -F',' '{print \$2}'`
+SYS_PING="ping -c 5 ${server_ip} | grep 'received' | awk -F',' '{print \$2}'"
 echo "Pinging ${server_ip} with response: "${SYS_PING}" "
          }
         }
