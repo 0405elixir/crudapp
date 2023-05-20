@@ -52,7 +52,7 @@ environment {
       steps {
         script {
           echo "Start of Stage Test2"
-          if (fileExists('docker-compos.yaml')) {
+          if (fileExists('docker-compose.yaml')) {
            echo 'Файл найден. Открываю'
             sh "cat docker-compose.yaml"
           }
