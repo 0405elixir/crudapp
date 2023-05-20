@@ -22,13 +22,14 @@ environment {
         }
       }
      } 
+    
       stage('вывод  списка , имени и владельца') {
         steps {
             sh "ls -la"
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
-          
-       }
+         }
+        
      stage('Test1') {
       steps {
         script {
@@ -44,6 +45,8 @@ environment {
           }
         }
        } 
+      }
+        
      stage('Test2') {
       steps {
         script {
@@ -60,7 +63,6 @@ environment {
          }
        }
       }
-    }
-    
-}
+        
+  }
 }
