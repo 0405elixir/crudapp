@@ -6,7 +6,7 @@ pipeline {
     }
   }
 environment {
-      PROJECT_NAME = "kuber"
+      PROJECT_NAME = "kub"
       OWNER_NAME   = "Artem Kalinin"
     }
   stages {
@@ -29,6 +29,7 @@ environment {
             echo "Testing......."
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
+          
              
          }
        }
