@@ -67,13 +67,13 @@ environment {
     stage('Тест 3. Наличие пинга') {
       steps {
         script {
-          HOST="8.8.8.8"
-           if (ping -c 1 -s 1 -W 1 $HOST >> /dev/null) {
-           echo "good"
-           }
-          else {
-          echo "lost"
-          }  
+          STATUS=`ping 8.8.8.8 -c 1 -w 2 | grep " 1 received"`
+
+if [[ -z "$STATUS" ]]; then
+  echo "Интернета нет"
+else
+  echo "Интернет есть"
+fi
           
          }
         }
