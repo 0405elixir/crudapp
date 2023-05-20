@@ -31,7 +31,7 @@ environment {
          }
       }
         
-     stage('Тест имени проекта') {
+     stage('Тест 1. Проверка имени проекта') {
       steps {
         script {
           echo "Start of Stage Test1"
@@ -48,7 +48,7 @@ environment {
        } 
       }
         
-      stage('Тест наличия файла') {
+      stage('Тест2. Наличие файла') {
       steps {
         script {
           echo "Start of Stage Test2"
@@ -63,6 +63,15 @@ environment {
          }
         }
        }
-        
+      
+    stage('Тест 3. Наличие пинга') {
+      steps {
+        script {
+          server_ip="8.8.8.8"
+SYS_PING=`ping -c 5 ${server_ip} | grep 'received' | awk -F',' '{print \$2}'`
+echo "Pinging ${server_ip} with response: "${SYS_PING}" "
+         }
+        }
+       }
   }
 }
