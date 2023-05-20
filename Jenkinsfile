@@ -31,7 +31,7 @@ environment {
           script {
            IP='192.168.1.1'
 sh 'fping -c1 -t300 $IP 2>/dev/null 1>/dev/null'
-if [ "$?" = 0 ]
+if ( "$?" = 0 )
 then
   echo "Host found"
 else
