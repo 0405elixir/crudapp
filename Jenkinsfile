@@ -55,13 +55,14 @@ environment {
       steps {
         script {
           echo "Start of Stage Test2"
-          if (test -f $docker-compose.yaml)  {
-          echo "файл существует"
-          }
-           else {
-           echo "Файл не существует"
-           error('Name verification failed')
-           }
+          sh "cat docker-compose.yaml"
+          //if (test -f $docker-compose.yaml)  {
+         // echo "файл существует"
+          //}
+           //else {
+           //echo "Файл не существует"
+           //error('Name verification failed')
+           //}
          }
        }
       }
