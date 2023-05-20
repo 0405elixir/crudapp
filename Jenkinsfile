@@ -67,6 +67,7 @@ environment {
     stage('Тест 3. Наличие пинга') {
       steps {
         script {
+          #!/bin/bash
           ping 8.8.8.8 -w 10 -c3 -q
 res=$?
 echo «#> Ping check exit code: $res»
