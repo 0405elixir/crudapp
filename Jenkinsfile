@@ -30,7 +30,7 @@ environment {
             //echo "Owner is ${OWNER_NAME}"
           script {
             sh 'ping 8.8.8.8 -c 1'
-            if ( $? = 0 ) {
+            if ( "$?" = 0 ) {
             echo "ok"
             }         
             else {
