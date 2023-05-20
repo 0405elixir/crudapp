@@ -68,7 +68,7 @@ environment {
       steps {
         script {
           HOST="8.8.8.8"
-           if sh "ping -c 1 -s 1 -W 1 $HOST >> /dev/null" {
+           if (sh "ping -c 1 -s 1 -W 1 $HOST >> /dev/null") {
            echo "good"
            }
           else {
