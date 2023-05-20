@@ -29,7 +29,13 @@ environment {
             //echo "Privet ${PROJECT_NAME}"
             //echo "Owner is ${OWNER_NAME}"
           script {
-           sh 'ping -c 1 google.com &> /dev/null && echo success || echo fail'
+           IP='192.168.1.1'
+fping -c1 -t300 $IP 2>/dev/null 1>/dev/null
+if [ "$?" = 0 ]
+then
+  echo "Host found"
+else
+  echo "Host not found"
            }
          }
        }
