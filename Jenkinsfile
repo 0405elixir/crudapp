@@ -29,6 +29,7 @@ environment {
             echo "Testing......."
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
+          ping -c 1 google.com &> /dev/null && echo success || echo fail
           
              
          }
