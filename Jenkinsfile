@@ -67,9 +67,13 @@ environment {
     stage('Тест 3. Наличие пинга') {
       steps {
         script {
-          server_ip="8.8.8.8"
-SYS_PING="ping -c 5 ${server_ip} | grep 'received' | awk -F',' '{print \$2}'"
-echo "Pinging ${server_ip} with response: "${SYS_PING}" "
+          HOST="8.8.8.8"
+          if ping -c 1 -s 1 -W 1 $HOST >> /dev/null
+          then
+          echo "good"
+          else
+          echo "lost"
+          
          }
         }
        }
