@@ -23,15 +23,18 @@ environment {
       }
      } 
     
-      stage('вывод  списка , имени и владельца') {
+      stage('вывод информации') {
         steps {
             sh "ls -la"
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
+          echo 'Job Name: ' + env.JOB_NAME
+          echo 'USER Name: ' + env.P4_USER
+          echo 'NODE Name: ' + env.NODE_NAME
         }
       }
         
-     stage('Test1') {
+     stage('Тест имени проекта') {
       steps {
         script {
           echo "Start of Stage Test1"
@@ -48,17 +51,15 @@ environment {
        } 
       }
         
-     stage('Test2') {
+     stage('Тест наличия файла') {
       steps {
         script {
           echo "Start of Stage Test2"
-          echo 'USER Name: ' + env.P4_USER //   вывести имя узла в Jenkins 
-           echo "Privet ${OWNER_NAME}"
-           if (env.P4_USER == OWNER_NAME) {
-            echo 'Name is correct'
-           }
+          if [ -e $if [ -e $docker-Compose.yaml ] {
+          echo "файл существует"
+          }
            else {
-           sh "echo 'Name is not correct'"
+           echo "Файл не существует"
            error('Name verification failed')
            }
          }
