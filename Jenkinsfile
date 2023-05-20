@@ -38,11 +38,11 @@ environment {
           echo 'Job Name: ' + env.JOB_NAME //   вывести имя проекта в Jenkins 
            echo "Privet ${PROJECT_NAME}"
           if (env.JOB_NAME == PROJECT_NAME) { //   если имя проекта в Jenkins совпадает с определенным в environment, то все Ок
-            echo 'Name is correct'
+            echo 'Имя не корректное'
           }
           else {
-            sh "echo 'Name is not correct'"
-            error('Name verification failed')  //если имя проекта в Jenkins  НЕ совпадает с определенным в environment, то прерываем выполнение
+            sh "echo 'Имя корректное'"
+            error('Проверка имени не прошла')  //если имя проекта в Jenkins  НЕ совпадает с определенным в environment, то прерываем выполнение
           }
         }
        } 
@@ -53,12 +53,12 @@ environment {
         script {
           echo "Start of Stage Test2"
           if (fileExists('docker-compose.yaml')) {
-           echo 'Yes'
+           echo 'Файл найден. Открываю'
             sh "cat docker-compose.yaml"
           }
            else {
-            echo 'No'
-            error('Name verification failed')
+            echo 'Файл не найден'
+            error('Проверка наличия файла не прошла')
            }
          }
         }
