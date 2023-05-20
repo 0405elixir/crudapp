@@ -31,6 +31,7 @@ environment {
           echo 'Job Name: ' + env.JOB_NAME
           echo 'USER Name: ' + env.EXECUTOR_NUMBER
           echo 'NODE Name: ' + env.NODE_NAME
+          echo 'USER1 Name: ' + env.UID
         }
       }
         
