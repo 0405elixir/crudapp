@@ -48,7 +48,7 @@ environment {
        } 
       }
         
-     stage('Тест наличия файла') {
+      /*stage('Тест наличия файла') {
       steps {
         script {
           echo "Start of Stage Test2"
@@ -62,7 +62,7 @@ environment {
            }
          }
         }
-       }
+       }*/
         
   }
 }
