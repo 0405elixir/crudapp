@@ -36,6 +36,8 @@ environment {
       steps {
         script {
           echo 'Job Name: ' + env.JOB_NAME
+          echo "Start of Stage Test..."
+          echo "Privet ${PROJECT_NAME}"
           if (env.JOB_NAME == PROJECT_NAME) {
             echo 'Name is correct'
           }
