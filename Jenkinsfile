@@ -41,7 +41,7 @@ environment {
             echo 'Имя не корректное'
           }
           else {
-            sh "echo 'Имя корректное'"
+            sh сecho 'Имя корректное'"
             error('Проверка имени не прошла')  //если имя проекта в Jenkins  НЕ совпадает с определенным в environment, то прерываем выполнение
           }
         }
@@ -68,11 +68,12 @@ environment {
       steps {
         script {
           HOST="8.8.8.8"
-          if ping -c 1 -s 1 -W 1 $HOST >> /dev/null
-          then
-          echo "good"
-          else
+           if sh "ping -c 1 -s 1 -W 1 $HOST >> /dev/null" {
+           echo "good"
+           }
+          else {
           echo "lost"
+          }  
           
          }
         }
