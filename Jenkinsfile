@@ -28,7 +28,8 @@ environment {
             sh "ls -la"
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
-         }
+        }
+      }
         
      stage('Test1') {
       steps {
