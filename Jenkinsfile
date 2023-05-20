@@ -6,7 +6,7 @@ pipeline {
     }
   }
 environment {
-      PROJECT_NAME = "kub"
+      PROJECT_NAME = "kuber"
       OWNER_NAME   = "Artem Kalinin"
     }
   stages {
