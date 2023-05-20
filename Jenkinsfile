@@ -22,7 +22,7 @@ environment {
         }
       }
      } 
-      stage('Test') {
+      stage('Test1') {
         steps {
              sh "ls -la"
             echo "Start of Stage Test..."
@@ -32,6 +32,19 @@ environment {
              
          }
        }
+     stage('Test2') {
+      steps {
+        script {
+          echo 'Job Name: ' + env.JOB_NAME
+          if (env.JOB_NAME == 'kuber') {
+            echo 'Name is correct'
+          }
+          else {
+            sh "echo 'Name is not correct'"
+          }
+        }
+      }
+    }
     }
 
   
