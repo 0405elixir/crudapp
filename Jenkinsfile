@@ -67,7 +67,7 @@ environment {
     stage('Тест 3. Наличие пинга') {
       steps {
         script {
-          if (ping -c1 google.com &> /dev/null)
+          if (ping google.com &> /dev/null)
 then
   echo "success"
 else
