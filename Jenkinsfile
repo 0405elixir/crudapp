@@ -12,6 +12,7 @@ pipeline {
       steps {
         container('kubectl') {
           withCredentials([file(credentialsId: 'mykubeconfig', variable: 'KUBECONFIG')]) {
+            sh 'kubectl delete namespace crud'
             sh 'kubectl create ns crud'
             sh 'kubectl apply -f ./manifests -n crud'
           }
