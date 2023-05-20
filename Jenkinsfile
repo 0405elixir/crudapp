@@ -6,7 +6,7 @@ pipeline {
     }
   }
 environment {
-      PROJECT_NAME = "Kub"
+      PROJECT_NAME = "kuber"
       OWNER_NAME   = "Artem Kalinin"
     }
   stages {
@@ -36,7 +36,7 @@ environment {
       steps {
         script {
           echo 'Job Name: ' + env.JOB_NAME
-          if (env.JOB_NAME == 'kuber') {
+          if (env.JOB_NAME == PROJECT_NAME) {
             echo 'Name is correct'
           }
           else {
