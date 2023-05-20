@@ -56,9 +56,14 @@ environment {
       steps {
         script {
           echo "Start of Stage Test2"
-          File f = new File(docker-compose.yaml);
-if(f.exists() && !f.isDirectory())
-          {sh "cat docker-compose.yaml"
+          if (fileExists('docker-compose.yaml')) {
+           echo 'Yes'
+          }
+           else {
+          echo 'No'
+          }
+          
+           //{sh "cat docker-compose.yaml"
           //if (test -f $docker-compose.yaml)  {
          // echo "файл существует"
           }
