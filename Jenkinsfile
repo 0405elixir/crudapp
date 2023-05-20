@@ -28,14 +28,15 @@ environment {
             echo "Start of Stage Test1"
             //echo "Privet ${PROJECT_NAME}"
             //echo "Owner is ${OWNER_NAME}"
-          sh 'ping 8.8.8.8 -c 1'
-          if ( $? = 0 ) {
-          echo "ok"
-           }         
+          script {
+            sh 'ping 8.8.8.8 -c 1'
+            if ( $? = 0 ) {
+            echo "ok"
+            }         
             else {
             error('No access')
             }
-         
+           }
          }
        }
      stage('Test2') {
