@@ -29,7 +29,7 @@ environment {
             echo "Privet ${PROJECT_NAME}"
             echo "Owner is ${OWNER_NAME}"
           echo 'Job Name: ' + env.JOB_NAME
-          echo 'USER Name: ' + env.P4_USER
+          echo 'USER Name: ' + env.EXECUTOR_NUMBER
           echo 'NODE Name: ' + env.NODE_NAME
         }
       }
