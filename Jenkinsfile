@@ -44,6 +44,7 @@ environment {
           }
           else {
             sh "echo 'Name is not correct'"
+            error('Stopping early…')
           }
         }
       }
