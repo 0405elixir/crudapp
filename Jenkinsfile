@@ -22,15 +22,16 @@ environment {
         }
       }
      } 
-      stage('2-Test') {
-            steps {
-                echo "Start of Stage Test..."
-                echo "Testing......."
-                echo "Privet ${PROJECT_NAME}"
-                echo "Owner is ${OWNER_NAME}"
-                
-            }
-        }
+      stage('Test') {
+        steps {
+            sh 'cat index.php' 
+            echo "Start of Stage Test..."
+            echo "Testing......."
+            echo "Privet ${PROJECT_NAME}"
+            echo "Owner is ${OWNER_NAME}"
+             
+         }
+       }
     }
 
   
