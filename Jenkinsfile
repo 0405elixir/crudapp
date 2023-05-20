@@ -55,7 +55,7 @@ environment {
       steps {
         script {
           echo "Start of Stage Test2"
-          if [ -e $if [ -e $docker-Compose.yaml ] {
+          if [-f $docker-compose.yaml ] {
           echo "файл существует"
           }
            else {
