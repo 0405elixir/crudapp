@@ -67,18 +67,11 @@ environment {
     stage('Тест 3. Наличие пинга') {
       steps {
         script {
-          #!/bin/bash
-          ping 8.8.8.8 -w 10 -c3 -q
-res=$?
-echo «#> Ping check exit code: $res»
-if [ $res == 2 ];then
-echo «#> Could not resolve 8.8.8.8»
-elif [ $res == 1 ]; then
-echo «#> Could not reach 8.8.8.8»
+          if ping -c 1 8.8.8.8 &> /dev/null
+then
+  echo "success"
 else
-echo «#> Restarting net.ppp0»
-/etc/init.d/net.ppp0 restart --nocolor &
-echo «#> Exit code (/etc/init.d/net.ppp0 restart): $?»
+  echo "error"
 fi
           
          }
