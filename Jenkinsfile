@@ -5,7 +5,10 @@ pipeline {
       yamlFile 'builder.yaml'
     }
   }
-
+environment {
+      PROJECT_NAME = "Kub"
+      OWNER_NAME   = "Artem Kalinin"
+    }
   stages {
 
     stage('Deploy App to Kubernetes') {
@@ -25,7 +28,7 @@ pipeline {
                 echo "Testing......."
                 echo "Privet ${PROJECT_NAME}"
                 echo "Owner is ${OWNER_NAME}"
-                echo "End of Stage Build..."
+                
             }
         }
     }
