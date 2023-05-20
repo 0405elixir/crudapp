@@ -24,7 +24,7 @@ environment {
      } 
       stage('Test') {
         steps {
-            sh 'cat index.php' 
+             sh "ls -la"
             echo "Start of Stage Test..."
             echo "Testing......."
             echo "Privet ${PROJECT_NAME}"
