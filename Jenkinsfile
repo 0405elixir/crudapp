@@ -35,14 +35,14 @@ environment {
       steps {
         script {
           echo "Start of Stage Test1"
-          echo "Имя заданное в  Jenkins: "  + env.JOB_NAME //   вывести имя проекта в Jenkins 
+          echo "Имя  задачи, заданное в  Jenkins: "  + env.JOB_NAME //   вывести имя задачи в Jenkins 
           echo "Имя заданное в  Jenkinsfile: ${PROJECT_NAME}"
-          if (env.JOB_NAME == PROJECT_NAME) { //   если имя проекта в Jenkins совпадает с определенным в environment, то все Ок
+          if (env.JOB_NAME == PROJECT_NAME) { //   если имя задачи в Jenkins совпадает с  именем проекта, определенным в environment, то все Ок
             echo "Имя  корректное"
           }
           else {
             echo "Имя  не корректное"
-            error('Проверка имени не прошла')  //если имя проекта в Jenkins  НЕ совпадает с определенным в environment, то прерываем выполнение
+            error('Проверка имени не прошла')  //если имя задачи в Jenkins  НЕ совпадает с определенным в environment, то прерываем выполнение
           }
         }
        } 
